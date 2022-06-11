@@ -18051,6 +18051,13 @@
         }
          
     }
+            /**
+     * 
+     *
+     */ 
+        class JoinClause {
+         
+    }
      
 }
 
@@ -18135,6 +18142,31 @@
         {
                         return \Illuminate\View\View::slot($slot);
         }
+         
+    }
+     
+}
+
+    namespace Spatie\MediaLibrary\MediaCollections\Models\Collections { 
+            /**
+     * 
+     *
+     * @template TKey of array-key
+     * @template TModel of \Spatie\MediaLibrary\MediaCollections\Models\Media
+     * @extends \Illuminate\Database\Eloquent\Collection<TKey, TModel>
+     */ 
+        class MediaCollection {
+         
+    }
+     
+}
+
+    namespace Illuminate\Notifications { 
+            /**
+     * 
+     *
+     */ 
+        class DatabaseNotificationCollection {
          
     }
      

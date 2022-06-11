@@ -61,7 +61,15 @@ class UserResource extends Resource
                 Forms\Components\Card::make()
                     ->schema([
                         Forms\Components\TextInput::make('email')
-                            ->unique()
+                            ->unique(fn (
+                                $component,
+                                $get,
+                                $livewire,
+                                $model,
+                                $record,
+                                $set,
+                                $state
+                            ) => $record === null)
                             ->label(__('Email'))
                             ->required()
                             ->email(),
