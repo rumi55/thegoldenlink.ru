@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Gallery;
+use App\Models\Organizer;
+use App\Models\Review;
+use App\Models\Venue;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,11 +18,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Gallery::factory()->count(4)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Organizer::factory()->count(10)->create();
+
+        Review::factory()->count(8)->create();
+
+        Venue::factory()->count(5)->create();
     }
 }

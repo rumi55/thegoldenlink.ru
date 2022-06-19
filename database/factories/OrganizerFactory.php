@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\City;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Organizer>
+ */
+class OrganizerFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+            'name'    => [
+                'ru' => $name = $this->faker->name(),
+                'en' => $name,
+            ],
+            'phone'   => $this->faker->phoneNumber(),
+            'email'   => $this->faker->email(),
+            'city_id' => City::query()->inRandomOrder()->first()->id,
+        ];
+    }
+}

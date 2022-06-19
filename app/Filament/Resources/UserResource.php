@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Models\Enums\Sex;
+use App\Models\Role;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -20,6 +21,11 @@ class UserResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     protected static ?int $navigationSort = 4900;
+
+    protected static function getNavigationGroup(): ?string
+    {
+        return __('Users');
+    }
 
     public static function getLabel(): string
     {
@@ -46,7 +52,7 @@ class UserResource extends Resource
                 Forms\Components\Card::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->label(__('Name'))
+                            ->label(__('User Name'))
                             ->required(),
 
                         Forms\Components\TextInput::make('spiritual_name')
@@ -79,8 +85,9 @@ class UserResource extends Resource
                             ->tel(),
 
                         Forms\Components\BelongsToManyMultiSelect::make('roles')
+                            ->preload()
                             ->relationship('roles', 'display_name')
-                            ->label(__('Roles'))
+                            ->label(__('Roles')),
                     ])
                     ->columnSpan(1),
 
@@ -125,7 +132,7 @@ class UserResource extends Resource
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('name')
-                    ->label(__('Name'))
+                    ->label(__('User Name'))
                     ->searchable()
                     ->sortable(),
 

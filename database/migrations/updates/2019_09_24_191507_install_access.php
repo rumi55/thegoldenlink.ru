@@ -39,6 +39,17 @@ class InstallAccess extends Migration
 
         $this->crud('user', ['ru' => 'пользователей', 'en' => 'users']);
         $this->crud('role', ['ru' => 'роли', 'en' => 'roles']);
+        $this->crud('city', ['ru' => 'города', 'en' => 'cities']);
+        $this->crud('venue', ['ru' => 'места проведения', 'en' => 'venues']);
+        $this->crud('teacher', ['ru' => 'учителей', 'en' => 'teachers']);
+        $this->crud('organizer', ['ru' => 'организаторов', 'en' => 'organizers']);
+        $this->crud('review', ['ru' => 'отзывов', 'en' => 'reviews']);
+        $this->crud('gallery', ['ru' => 'галереи', 'en' => 'galleries']);
+        $this->crud('customBlock', ['ru' => 'блоки', 'en' => 'blocks']);
+        $this->crud('emailTemplate', ['ru' => 'email шаблоны', 'en' => 'email templates']);
+        $this->crud('mailingList', ['ru' => 'email рассылки', 'en' => 'mailing lists']);
+        $this->crud('tag', ['ru' => 'теги', 'en' => 'tags']);
+        $this->crud('event', ['ru' => 'мероприятия', 'en' => 'events']);
     }
 
     protected function permission($name, $displayName)

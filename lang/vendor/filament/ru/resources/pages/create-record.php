@@ -15,11 +15,15 @@ return [
             ],
 
             'create' => [
-                'label' => 'Создать',
+                'label' => 'Сохранить',
             ],
 
             'create_and_create_another' => [
-                'label' => 'Создать и Создать еще',
+                'label' => 'Сохранить и создать еще',
+            ],
+
+            'create_another' => [
+                'label' => 'Сохранить и создать еще',
             ],
 
         ],

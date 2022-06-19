@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/login', config('filament.path'))->name('login');
+
 Route::prefix(config('filament.path'))
     ->middleware(['web'])
     ->group(function () {
@@ -23,4 +25,5 @@ Route::prefix(config('filament.path'))
         })->name('admin.locale');
     });
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')
+    ->name('home');

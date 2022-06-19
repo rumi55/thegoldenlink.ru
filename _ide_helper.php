@@ -18051,13 +18051,6 @@
         }
          
     }
-            /**
-     * 
-     *
-     */ 
-        class JoinClause {
-         
-    }
      
 }
 
@@ -18147,26 +18140,32 @@
      
 }
 
-    namespace Spatie\MediaLibrary\MediaCollections\Models\Collections { 
-            /**
-     * 
-     *
-     * @template TKey of array-key
-     * @template TModel of \Spatie\MediaLibrary\MediaCollections\Models\Media
-     * @extends \Illuminate\Database\Eloquent\Collection<TKey, TModel>
-     */ 
-        class MediaCollection {
-         
-    }
-     
-}
-
-    namespace Illuminate\Notifications { 
+    namespace Filament\Support\Components { 
             /**
      * 
      *
      */ 
-        class DatabaseNotificationCollection {
+        class ViewComponent {
+                    /**
+         * 
+         *
+         * @see \App\Providers\AppServiceProvider::boot()
+         * @static 
+         */ 
+        public static function ruHelp()
+        {
+                        return \Filament\Support\Components\ViewComponent::ruHelp();
+        }
+                    /**
+         * 
+         *
+         * @see \App\Providers\AppServiceProvider::boot()
+         * @static 
+         */ 
+        public static function enHelp()
+        {
+                        return \Filament\Support\Components\ViewComponent::enHelp();
+        }
          
     }
      

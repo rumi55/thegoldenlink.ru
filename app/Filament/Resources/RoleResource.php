@@ -19,6 +19,11 @@ class RoleResource extends Resource
 
     protected static ?int $navigationSort = 5000;
 
+    protected static function getNavigationGroup(): ?string
+    {
+        return __('Users');
+    }
+
     public static function getLabel(): string
     {
         return __('Role');
