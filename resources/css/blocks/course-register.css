@@ -1,0 +1,88 @@
+.course-register {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.course-register__title {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ff9000;
+    margin-bottom: 5px;
+}
+
+.course-register__subtitle {
+    font-size: 20px;
+    color: #655142;
+    margin-bottom: 25px;
+}
+
+.course-register__tables {
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media (--mobile) {
+        flex-direction: column;
+    }
+}
+
+.course-register__table {
+    background-color: #ffffff;
+    justify-content: center;
+    height: 470px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin: 0 10px;
+    align-items: center;
+    -webkit-box-shadow: 0 0 15px -2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0 0 15px -2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0 0 15px -2px rgba(34, 60, 80, 0.2);
+
+    @media (--mobile) {
+        width: 100%;
+        margin-bottom: 35px;
+        margin-left: 0;
+    }
+}
+
+.course-register__pic {
+    height: 180px;
+    width: 300px;
+    object-fit: contain;
+}
+
+.course-register__table-title {
+    font-size: 19px;
+    color: #ff9000;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.course-register__table-text {
+    margin-top: 0;
+    font-size: 16px;
+    color: #655142;
+}
+
+.course-register__table-price {
+    font-size: 40px;
+    color: #01daf4;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.course-register__contact {
+    margin-top: 80px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.course-register__link {
+    text-decoration: none;
+}

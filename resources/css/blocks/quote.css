@@ -1,0 +1,26 @@
+.quote {
+    text-align: center;
+}
+
+.quote__content {
+    padding: 0 22% 0;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+@media (--mobile) {
+    width: auto;
+    font-size: 14px;
+    padding: 0 5% 0;
+}
+}
+
+.quote__subtitle {
+    color: #ed8d0e;
+    font-size: 20px;
+    font-weight: 600;
+}

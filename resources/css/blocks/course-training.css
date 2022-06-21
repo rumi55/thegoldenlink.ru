@@ -1,0 +1,44 @@
+.course-training {
+    text-align: center;
+
+    @media (--mobile) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+.course-training__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course__training-text {
+    font-size: 20px;
+
+    @media (--mobile) {
+        font-size: 16px;
+    }
+}
+
+.course-training__date {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #754211;
+
+    @media (--mobile) {
+        font-size: 20px;
+    }
+}
+
+.course-training__title {
+    font-size: 26px;
+    color: #ff9200;
+    margin-bottom: 30px;
+    font-weight: 600;
+
+    @media (--mobile) {
+        font-size: 26px;
+    }
+}

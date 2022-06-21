@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('event_classes', function (Blueprint $table) {
             $table->id();
 
-            $table->json('name');
+            $table->json('title');
             $table->json('subtitle');
-            $table->json('text');
             $table->json('dates');
             $table->boolean('is_payable')->nullable();
             $table->boolean('is_free')->nullable();

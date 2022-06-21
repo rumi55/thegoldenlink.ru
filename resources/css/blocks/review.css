@@ -1,0 +1,35 @@
+.reviews {
+    margin-top: 70px;
+}
+
+.review {
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.review__picture {
+    margin-bottom: 25px;
+}
+
+.review__image {
+    width: 100px;
+    height: 100px;
+    border-radius: 200px;
+    object-fit: cover;
+}
+
+.review__text {
+    margin: 0 auto 15px;
+    width: 90%;
+}
+
+.review__about {
+    font-weight: 600;
+    color: #ed8d0e;
+}
+
+.review__from {
+    font-weight: 600;
+    color: #3f2513;
+}

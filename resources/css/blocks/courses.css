@@ -1,0 +1,9 @@
+.courses {
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid #ed8d0e;
+
+    @media (--mobile) {
+        border: none;
+    }
+}

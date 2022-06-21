@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Gallery;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,5 +23,19 @@ class GalleryFactory extends Factory
                 'en' => $name,
             ],
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (Gallery $gallery) {
+            collect(array_fill(0, 10, 'some'))
+                ->each(function () use ($gallery) {
+                    copy(resource_path('images/content/gallery.jpg'), resource_path('images/content/galleryUpload.jpg'));
+
+                    $gallery
+                        ->addMedia(resource_path('images/content/galleryUpload.jpg'))
+                        ->toMediaCollection(Gallery::COLLECTION);
+                });
+        });
     }
 }

@@ -59,6 +59,8 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereSpiritualName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property mixed|null $settings
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereSettings($value)
  */
 class User extends Authenticatable implements HasMedia, FilamentUser, HasAvatar
 {

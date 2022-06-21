@@ -56,7 +56,7 @@ class ReviewResource extends Resource
 
                         Forms\Components\SpatieMediaLibraryFileUpload::make('photo')
                             ->label(__('Photo'))
-                            ->collection('photo')
+                            ->collection(Review::COLLECTION)
                     ])
                     ->columns(2),
             ]);

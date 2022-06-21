@@ -1,0 +1,47 @@
+.lang {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.lang__item {
+    margin-right: 10px;
+}
+
+.lang__item--last {
+    margin-right: 0;
+}
+
+.lang__link {
+    text-decoration: none;
+    letter-spacing: 1.6px;
+
+    @media (--mobile) {
+        color: #fff;
+    }
+
+    @media (--desktop) {
+        color: #51301a;
+    }
+
+    &:hover {
+        color: #ed8d0e;
+    }
+}
+
+.lang__link--active {
+    color: #ed8d0e;
+}
+
+.lang__link--course{
+    @media (--mobile) {
+        color: #624129;
+    }
+
+    @media (--desktop) {
+        color: #51301a;
+    }
+}

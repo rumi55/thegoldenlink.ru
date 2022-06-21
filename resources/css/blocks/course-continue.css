@@ -1,0 +1,28 @@
+.course-continue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 560px;
+    background-image: url("../../images/desktop/training-continue.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.course-continue__text {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #fffaf1;
+    border-radius: 10px;
+    padding: 30px 30px;
+    margin: 0 20px;
+
+    @media (--mobile) {
+        font-size: 16px;
+    }
+}
+
+.course-continue__text--dark {
+    color: #ff9e20;
+}

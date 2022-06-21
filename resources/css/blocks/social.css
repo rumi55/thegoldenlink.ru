@@ -1,0 +1,32 @@
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+.social {
+    text-decoration: none;
+    background-color: #c1a78b;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 15px;
+
+    &:hover {
+        background-color: #ed8d0e;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px #ed8d0e;
+        background-color: #ed8d0e;
+        outline: none;
+    }
+}
+
+.social--mobile {
+    width: 35px;
+    height: 35px;
+}

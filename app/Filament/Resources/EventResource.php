@@ -7,6 +7,7 @@ use App\Filament\Resources\EventResource\Pages;
 use App\Filament\Resources\EventResource\RelationManagers;
 use App\Models\Enums\Currency;
 use App\Models\Event;
+use App\Models\EventClass;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -58,14 +59,10 @@ class EventResource extends Resource
                                             ->required()
                                             ->label(__('Title'))
                                     ),
+
                                     ...LangField::from(
                                         Forms\Components\TextInput::make('subtitle')
                                             ->label(__('Subtitle'))
-                                    ),
-                                    ...LangField::from(
-                                        Forms\Components\RichEditor::make('text_preview')
-                                            ->label(__('Text of preview'))
-                                            ->columnSpan(2)
                                     ),
 
                                     Forms\Components\BelongsToSelect::make('venue_id')
@@ -73,6 +70,7 @@ class EventResource extends Resource
                                         ->label(__('Venue')),
 
                                     Forms\Components\BelongsToManyMultiSelect::make('tags')
+                                        ->required()
                                         ->preload()
                                         ->relationship('tags', 'name')
                                         ->label(__('Tags')),
@@ -84,6 +82,10 @@ class EventResource extends Resource
                                         ->label(__('Teachers'))
                                         ->columnSpan(2),
 
+                                    Forms\Components\SpatieMediaLibraryFileUpload::make('preview_image')
+                                        ->required()
+                                        ->label(__('Preview photo'))
+                                        ->collection('preview_image'),
                                 ])
                                 ->columns(2)
                         ]),
@@ -92,7 +94,9 @@ class EventResource extends Resource
                         ->schema([
                             Forms\Components\Card::make()
                                 ->schema([
-                                    Forms\Components\Repeater::make(__('Classes'))
+                                    Forms\Components\RelationshipRepeater::make('classes')
+                                        ->label(__('Classes'))
+                                        ->relationship('classes')
                                         ->schema([
                                             Forms\Components\Toggle::make('is_payable')
                                                 ->label(__('Is payable'))
@@ -103,18 +107,40 @@ class EventResource extends Resource
                                                 ->default(false),
 
                                             ...LangField::from(
-                                                Forms\Components\TextInput::make('name')
+                                                Forms\Components\TextInput::make('title')
                                                     ->required()
-                                                    ->label(__('Name'))
+                                                    ->label(__('Title'))
                                             ),
                                             ...LangField::from(
                                                 Forms\Components\TextInput::make('subtitle')
                                                     ->label(__('Subtitle'))
                                             ),
 
-                                            Forms\Components\Repeater::make(__('Dates'))
+                                            Forms\Components\BelongsToManyMultiSelect::make('emailTemplatesAfterRegister')
+                                                    ->label(__('Email template after register'))
+                                                    ->relationship('emailTemplatesAfterRegister', 'name')
+                                                    ->preload(),
+
+                                            Forms\Components\BelongsToManyMultiSelect::make('emailTemplatesAfterPay')
+                                                ->label(__('Email template after pay'))
+                                                ->relationship('emailTemplatesAfterPay', 'name')
+                                                ->preload(),
+
+                                            Forms\Components\BelongsToManyMultiSelect::make('emailTemplatesAfterClass')
+                                                ->label(__('Email template after class'))
+                                                ->relationship('emailTemplatesAfterClass', 'name')
+                                                ->preload(),
+
+                                            Forms\Components\BelongsToManyMultiSelect::make('emailTemplatesAfterEvent')
+                                                ->label(__('Email template after event'))
+                                                ->relationship('emailTemplatesAfterEvent', 'name')
+                                                ->preload(),
+
+                                            Forms\Components\Repeater::make('dates')
+                                                ->label(__('Dates'))
                                                 ->schema([
                                                     Forms\Components\DateTimePicker::make('start_at')
+                                                        ->required()
                                                         ->label(__('Start at')),
 
                                                     Forms\Components\DateTimePicker::make('end_at')
@@ -124,7 +150,8 @@ class EventResource extends Resource
                                                 ->columnSpan(2)
                                                 ->createItemButtonLabel(__('Add date')),
 
-                                            Forms\Components\Repeater::make(__('Prices'))
+                                            Forms\Components\RelationshipRepeater::make('prices')
+                                                ->label(__('Prices'))
                                                 ->schema([
                                                     Forms\Components\TextInput::make('price')
                                                         ->numeric()
@@ -134,6 +161,7 @@ class EventResource extends Resource
                                                         ->label(__('Expire at')),
 
                                                     Forms\Components\Select::make('currency')
+                                                        ->default(Currency::RUB)
                                                         ->options(Currency::options())
                                                         ->label(__('Currency')),
                                                 ])
@@ -162,18 +190,10 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('venue_id'),
-                Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('subtitle'),
-                Tables\Columns\TextColumn::make('dates'),
-                Tables\Columns\TextColumn::make('text_preview'),
-                Tables\Columns\BooleanColumn::make('is_hot'),
-                Tables\Columns\BooleanColumn::make('is_published'),
-                Tables\Columns\TextColumn::make('views'),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
+                Tables\Columns\TextColumn::make('title')
+                    ->label(__('Title'))
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/**
+ * NPM
+ */
+@import '../../node_modules/tiny-slider/dist/tiny-slider.css';
+
+/**
+ * Base
+ */
+@import 'variables.css';
+@import 'normalize.css';
+
+/**
+ * Blocks
+ */
+@import 'blocks/container.css';
+@import 'blocks/btn.css';
+@import 'blocks/lang.css';
+@import 'blocks/logo.css';
+@import 'blocks/menu.css';
+@import 'blocks/nav.css';
+@import 'blocks/number.css';
+@import 'blocks/main.css';
+@import 'blocks/title.css';
+@import 'blocks/section.css';
+@import 'blocks/event.css';
+@import 'blocks/badge.css';
+@import 'blocks/teachers.css';
+@import 'blocks/carousel.css';
+@import 'blocks/gallery.css';
+@import 'blocks/review.css';
+@import 'blocks/footer.css';
+@import 'blocks/input.css';
+@import 'blocks/social.css';
+@import 'blocks/courses.css';
+@import 'blocks/course.css';
+@import 'blocks/course-info.css';
+@import 'blocks/course-additional.css';
+@import 'blocks/course-details.css';
+@import 'blocks/course-training.css';
+@import 'blocks/course-video.css';
+@import 'blocks/course-results.css';
+@import 'blocks/course-timetable.css';
+@import 'blocks/course-continue.css';
+@import 'blocks/course-register.css';
+@import 'blocks/course-head.css';
+
+@import 'blocks/price-block.css';
+@import 'blocks/quote.css';
+@import 'blocks/modal.css';
+@import 'blocks/contacts.css';
+

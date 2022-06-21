@@ -1,0 +1,43 @@
+.contacts__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    letter-spacing: .5px;
+    line-height: 1.5;
+}
+.contacts {
+    display: flex;
+    align-items: flex-start;
+    font-size: 22px;
+    padding: 25px;
+}
+.contacts__img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.contacts__city {
+    line-height: 2px;
+    font-weight: 300;
+}
+
+.contacts__city__name {
+    padding-bottom: 16px;
+}
+
+.contacts__name {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.contacts__phone__email {
+    font-size: 20px;
+    color: #8f7042;
+    font-weight: 500;
+}
+
+.contacts__content {
+    margin-left: 50px;
+}
+

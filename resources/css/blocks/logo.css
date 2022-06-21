@@ -1,0 +1,37 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @media (--mobile) {
+        color: #fff;
+    }
+
+    @media (--desktop) {
+        color: #89532d;
+    }
+}
+
+.logo__text {
+    font-weight: 500;
+
+    @media (--mobile) {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #f2ad52;
+    }
+
+    @media (--desktop) {
+        font-size: 18px;
+        margin-top: 14px;
+        color: #ed7f09;
+    }
+}
+
+.logo__text--small
+{
+    font-weight: 600;
+    font-size: 11px;
+    margin-top: 10px;
+}
+

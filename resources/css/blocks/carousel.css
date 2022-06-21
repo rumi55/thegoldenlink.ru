@@ -1,0 +1,112 @@
+.carousel {
+    position: relative;
+}
+
+.carousel__list {
+    display: flex;
+}
+
+.carousel__item {
+
+}
+
+.carousel__image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel__link {
+    text-decoration: none;
+}
+
+.carousel__controls {
+    @media (--desktop) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-30px);
+        width: 100%;
+    }
+
+    @media (--mobile) {
+        position: relative;
+        width: 120px;
+        margin: auto;
+    }
+}
+
+.carousel__next, .carousel__prev {
+    position: absolute;
+
+    @media (--mobile) {
+        background: none !important;
+        padding: 0;
+        top: -31px;
+    }
+}
+
+.carousel__next {
+    @media (--desktop) {
+        right: 40px;
+    }
+
+    @media (--mobile) {
+        right: 0;
+    }
+}
+
+.carousel__prev {
+    @media (--desktop) {
+        left: 40px;
+    }
+
+    @media (--mobile) {
+        left: 0;
+    }
+}
+
+.carousel__icon {
+    @media (--desktop) {
+        width: 32px;
+        height: 32px;
+    }
+
+    @media (--mobile) {
+        width: 13px;
+        height: 13px;
+        color: #c1a78b;
+    }
+}
+
+.carousel .tns-inner {
+    @media (--desktop) {
+        width: 80%;
+        overflow: hidden;
+        margin: auto !important;
+        transform: translateX(10px);
+    }
+}
+
+.carousel .tns-nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 80px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel .tns-nav button {
+    content: "";
+    min-width: 10px;
+    min-height: 10px;
+    border: 1px solid #eb8500;
+    border-radius: 20px;
+    background-color: #fff8e7;
+    padding: 0;
+    margin: 0 5px;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.carousel .tns-nav .tns-nav-active {
+    background-color: #eb8500;
+}

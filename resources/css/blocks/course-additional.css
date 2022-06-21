@@ -1,0 +1,49 @@
+.course-additional{
+    padding-top: 100px;
+    height: 620px;
+
+    @media (--mobile) {
+        height: 720px;
+        padding-top: 50px;
+    }
+}
+
+.course-additional__bg {
+    background-image: url(../images/desktop/bg-footer-clean.png);
+    -moz-background-size: cover;
+    background-position: bottom;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+
+    @media (--mobile) {
+        height: 670px;
+        background-position: right;
+    }
+}
+
+.course-additional__holder {
+    text-align: center;
+}
+
+.course-additional__title {
+    color: #5b381e;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 38px;
+
+    @media (--mobile) {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+.course-additional__text {
+    color: #5b381e;
+    font-size: 20px;
+    font-weight: 500;
+
+    @media (--mobile) {
+        font-size: 16px;
+    }
+}

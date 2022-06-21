@@ -1,0 +1,103 @@
+.teachers {
+    display: flex;
+    align-items: flex-start;
+
+    @media (--mobile) {
+        flex-direction: column;
+    }
+}
+
+.teachers__img {
+    width: 100%;
+}
+
+.teachers__photo {
+    @media (--desktop) {
+        width: 50%;
+    }
+}
+
+.teachers__content {
+    @media (--mobile) {
+        text-align: center;
+    }
+
+    @media (--desktop) {
+        width: 50%;
+        margin-left: 50px;
+    }
+}
+
+.teachers__title {
+    margin-top: 0;
+
+    @media (--mobile) {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+.teachers__btn {
+    margin-top: 15px;
+}
+
+.about-teachers {
+    display: flex;
+
+    @media (--mobile) {
+        flex-direction: column;
+    }
+}
+
+.about-teachers__photo {
+    width: 40%;
+
+    @media (--mobile) {
+        width: auto;
+    }
+}
+
+.about-teachers__content {
+    width: 60%;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (--mobile) {
+        width: auto;
+        font-size: 14px;
+        text-align: center;
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.about-teachers__subtitle {
+    color: #ed8d0e;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.about-teachers__text {
+    color: #472a16;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.about-teachers__text--bold {
+    font-weight: 600;
+}
+
+.about-teachers__img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: right;
+    object-position: center;
+}

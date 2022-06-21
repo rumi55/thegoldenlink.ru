@@ -1,0 +1,81 @@
+.course-results {
+
+    @media (--mobile) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+.course-results__achievement {
+    display: flex;
+    flex-direction: row;
+}
+
+.course-results__header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.course-results__title {
+    font-size: 30px;
+    color: #ff9000;
+    text-transform: uppercase;
+
+    @media (--mobile) {
+        font-size: 20px;
+    }
+}
+
+.course-results__subtitle {
+    font-size: 22px;
+    font-weight: 500;
+
+    @media (--mobile) {
+        font-size: 18px;
+    }
+}
+
+.course-results__achievement-img {
+    width: 10%;
+    padding-top: 10px;
+
+    @media (--mobile) {
+        width: 13%;
+        padding-right: 5px;
+    }
+}
+
+.course-results__achievement-content {
+    width: 90%;
+}
+
+.course-results__achievement-icon {
+    width: 50px;
+    height: 35px;
+
+    @media (--mobile) {
+        width: 40px;
+        height: 30px;
+    }
+}
+
+.course-results__achievement-title {
+    font-size: 22px;
+    margin-bottom: 0;
+    color: #754211;
+
+    @media (--mobile) {
+        font-size: 18px;
+    }
+}
+
+.course-results__achievement-text {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #472a16;
+    font-weight: 500;
+
+    @media (--mobile) {
+        font-size: 16px;
+    }
+}

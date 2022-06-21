@@ -1,0 +1,20 @@
+.title {
+    font-weight: 500;
+    line-height: 1.35em;
+    text-transform: uppercase;
+
+    @media (--mobile) {
+        font-size: 28px;
+    }
+
+    @media (--desktop) {
+        font-size: 37px;
+        color: #5b381e;
+    }
+}
+
+.subtitle {
+    color: #ed8d0e;
+    font-size: 22px;
+    font-weight: 500;
+}

@@ -18051,6 +18051,13 @@
         }
          
     }
+            /**
+     * 
+     *
+     */ 
+        class JoinClause {
+         
+    }
      
 }
 
@@ -18166,6 +18173,67 @@
         {
                         return \Filament\Support\Components\ViewComponent::enHelp();
         }
+         
+    }
+     
+}
+
+    namespace App\Forms\Components { 
+            /**
+     * 
+     *
+     */ 
+        class EmailEditor {
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class MapPicker {
+         
+    }
+     
+}
+
+    namespace Filament\Forms\Components { 
+            /**
+     * 
+     *
+     */ 
+        class Field {
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class Component {
+         
+    }
+     
+}
+
+    namespace Spatie\MediaLibrary\MediaCollections\Models\Collections { 
+            /**
+     * 
+     *
+     * @template TKey of array-key
+     * @template TModel of \Spatie\MediaLibrary\MediaCollections\Models\Media
+     * @extends \Illuminate\Database\Eloquent\Collection<TKey, TModel>
+     */ 
+        class MediaCollection {
+         
+    }
+     
+}
+
+    namespace Illuminate\Notifications { 
+            /**
+     * 
+     *
+     */ 
+        class DatabaseNotificationCollection {
          
     }
      

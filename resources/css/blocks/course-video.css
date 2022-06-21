@@ -1,0 +1,35 @@
+.course-video {
+    text-align: center;
+
+    @media (--mobile) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+.course-video__holder {
+    position:relative;
+    padding: 25px 10px 56.25%;
+    height:0;
+}
+
+.course-video__holder iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.course-video__text {
+    padding-bottom: 30px;
+    color: #754211;
+    font-size: 26px;
+    font-weight: 600;
+
+    @media (--mobile) {
+        font-size: 18px;
+    }
+}
+
+

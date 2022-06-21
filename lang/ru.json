@@ -36,6 +36,7 @@
     "Statistic 3": "Статистика 3",
     "Statistic 4": "Статистика 4",
     "Statistic 5": "Статистика 5",
+    "Header": "Шапка",
     "Home": "Главная",
     "Organizer name": "ФИО организатора",
     "Phone": "Телефон",
@@ -91,5 +92,9 @@
     "Currency": "Валюта",
     "Add price": "Добавить цену",
     "Add date": "Добавить дату",
-    "Add class": "Добавить класс"
+    "Add class": "Добавить класс",
+    "Email template after register": "Email шаблон после регистрации на класс",
+    "Email template after pay": "Email шаблон после оплаты за класс",
+    "Email template after class": "Email шаблон по окончанию класса",
+    "Email template after event": "Email шаблон по окончанию мероприятия"
 }

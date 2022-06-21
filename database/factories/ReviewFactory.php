@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Gallery;
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -27,5 +29,16 @@ class ReviewFactory extends Factory
             ],
             'link_to_youtube' => $this->faker->imageUrl(),
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (Review $review) {
+            copy(resource_path('images/content/review.jpg'), resource_path('images/content/reviewUpload.jpg'));
+
+            $review
+                ->addMedia(resource_path('images/content/reviewUpload.jpg'))
+                ->toMediaCollection(Review::COLLECTION);
+        });
     }
 }

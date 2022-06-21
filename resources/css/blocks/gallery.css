@@ -1,0 +1,153 @@
+.gallery {
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery__thumbs {
+    @media (--desktop) {
+        margin: 10px 0 0;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.gallery__thumbnail {
+    @media (--desktop) {
+        height: 155px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 30%;
+    }
+
+    @media (--mobile) {
+        display: none;
+    }
+}
+
+.gallery__thumb {
+    @media (--mobile) {
+        width: auto;
+
+        &:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border: 1px solid #eb8500;
+            border-radius: 20px;
+            background-color: #fff8e7;
+            padding: 0;
+            margin-right: 10px;
+            display: block;
+        }
+    }
+}
+
+.tns-nav-active {
+    @media (--mobile) {
+        &:before {
+            background-color: #eb8500;
+        }
+    }
+}
+
+.gallery__main {
+    display: flex;
+}
+
+.gallery__item {
+    @media (--desktop) {
+        height: 700px;
+    }
+
+    @media (--mobile) {
+        height: 80vh;
+    }
+}
+
+.gallery__image {
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__nav {
+    position: relative;
+}
+
+.gallery__icon {
+    @media (--desktop) {
+        width: 32px;
+        height: 32px;
+    }
+
+    @media (--mobile) {
+        width: 13px;
+        height: 13px;
+        color: #c1a78b;
+    }
+}
+
+.gallery__controls {
+    @media (--mobile) {
+        position: absolute;
+        z-index: 1;
+        top: 38%;
+        left: 0;
+        right: 0;
+        width: 138px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        padding-right: 12px;
+    }
+}
+
+.gallery__prev, .gallery__next {
+    @media (--desktop) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-30%);
+    }
+
+    @media (--mobile) {
+        padding: 0;
+        background: none !important;
+    }
+}
+
+.gallery__prev {
+    @media (--desktop) {
+        left: 5px;
+    }
+}
+
+.gallery__next {
+    @media (--desktop) {
+        right: 5px;
+    }
+}
+
+.gallery__nav .tns-inner {
+    @media (--desktop) {
+        width: 86%;
+        overflow: hidden;
+        margin: 0 auto !important;
+        padding-left: 10px;
+    }
+
+    @media (--mobile) {
+        width: 90px;
+        overflow: hidden;
+        margin: 20px auto !important;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.gallery .tns-nav {
+    margin-top: 20px;
+}
+
+.gallery .tns-nav .tns-nav-active {
+    background-color: #eb8500;
+}

@@ -1,0 +1,142 @@
+.section {
+    @media (--mobile) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @media (--desktop) {
+        padding-top: 113px;
+        padding-bottom: 113px;
+    }
+}
+
+.section--colored {
+    background-color: #fff8f1;
+}
+
+.section--colored-darker {
+    background-color: #fff1e4;
+}
+
+.section--h590 {
+    height: 590px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (--mobile) {
+        height: auto;
+    }
+}
+
+.section--h820 {
+    height: 820px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (--mobile) {
+        height: auto;
+    }
+}
+
+.section--h875 {
+    height: 875px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (--mobile) {
+        height: auto;
+    }
+}
+
+.section--h790 {
+    height: 790px;
+}
+
+.section--h560 {
+    height: 560px;
+
+    @media (--mobile) {
+        height: auto;
+    }
+}
+
+.section__about-teachers {
+    padding: 0;
+}
+
+.section__prices {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: #fff1e4;
+}
+
+.section__quote {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+
+.section__title {
+    text-align: center;
+
+    @media (--mobile) {
+        margin-bottom: 35px;
+    }
+
+    @media (--desktop) {
+        margin-bottom: 65px;
+    }
+}
+
+.section__title--small {
+    text-transform: none;
+    font-size: 22px;
+    margin-bottom: unset;
+    padding-bottom: 40px;
+}
+
+.section--alt {
+    padding-top: 80px;
+    padding-bottom: 130px;
+
+    @media (--mobile) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.section-temple {
+    background-image: url('../images/desktop/bg-temple.png');
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+
+    @media (--mobile) {
+        background-position: 12% bottom;
+    }
+
+    @media (--desktop) {
+        background-position: 40% bottom;
+    }
+}
+
+.section-temple__text {
+    color: #5b381e;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.section-temple__link {
+    text-decoration: none;
+}
+
+.section--no-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+}

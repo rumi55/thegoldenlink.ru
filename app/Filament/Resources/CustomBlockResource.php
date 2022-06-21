@@ -59,7 +59,7 @@ class CustomBlockResource extends Resource
                         Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                             ->label(__('Image'))
                             ->required()
-                            ->collection('image'),
+                            ->collection(CustomBlock::COLLECTION),
                     ])
                     ->columns(2),
             ]);

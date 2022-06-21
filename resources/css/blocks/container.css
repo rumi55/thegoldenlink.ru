@@ -1,0 +1,53 @@
+.container {
+    width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (width < 1120px) {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.container--header {
+    width: fit-content;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media (--mobile) {
+        width: 100vw;
+    }
+}
+
+.container--alt-paddings {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container--learn {
+    width: 900px;
+
+    @media (--mobile) {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.container--head {
+    width: 420px;
+}
+
+.container--timetable {
+    width: 600px;
+
+    @media (--mobile) {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

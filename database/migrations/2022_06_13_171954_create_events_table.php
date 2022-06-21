@@ -17,9 +17,6 @@ return new class extends Migration
             $table->id();
             $table->json('title');
             $table->json('subtitle')->nullable();
-            // @todo возможно удалить
-            $table->json('dates')->nullable();
-            $table->json('text_preview')->nullable();
             $table->boolean('is_hot')->nullable();
             $table->boolean('is_published')->nullable();
             $table->json('views')->nullable();
