@@ -54,7 +54,7 @@ class CreateResourcesFromModels extends Command
             return;
         }
 
-        foreach ((new Finder)->in($paths)->depth(0)->files() as $command) {
+        foreach ((new Finder())->in($paths)->depth(0)->files() as $command) {
             $name = str_replace('.' . $command->getExtension(), '', $command->getBasename());
 
             if (in_array($name, $this->except)) {

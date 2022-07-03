@@ -20,7 +20,6 @@ abstract class BasePolicy
      */
     public function __construct()
     {
-
     }
 
     protected function getPermissionPrefix(): string

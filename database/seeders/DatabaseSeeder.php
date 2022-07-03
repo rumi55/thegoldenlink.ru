@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Organizer;
 use App\Models\Review;
@@ -25,5 +26,7 @@ class DatabaseSeeder extends Seeder
         Review::factory()->count(8)->create();
 
         Venue::factory()->count(5)->create();
+
+        Event::factory()->count(5)->create();
     }
 }

@@ -28,10 +28,18 @@
     }
 }
 
-.logo__text--small
-{
+.logo__text--small {
     font-weight: 600;
     font-size: 11px;
     margin-top: 10px;
+    @media (--mobile) {
+        color: #fff !important;
+    }
+}
+
+.main__logo--small {
+    @media (--mobile) {
+        color: #fff !important;
+    }
 }
 

@@ -36,9 +36,9 @@ class Gallery extends Model implements HasMedia
     use HasTranslations;
     use InteractsWithMedia;
 
-    const COLLECTION = 'images';
-    const THUMB = 'thumb';
-    const RESIZE = 'resize';
+    public const COLLECTION = 'images';
+    public const THUMB = 'thumb';
+    public const RESIZE = 'resize';
 
     protected $fillable = [
         'name',
@@ -48,7 +48,7 @@ class Gallery extends Model implements HasMedia
         'name',
     ];
 
-    /** Accessors & Mutators */
+    /** Attributes */
 
     public function images(): Attribute
     {

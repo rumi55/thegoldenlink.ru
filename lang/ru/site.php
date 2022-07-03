@@ -14,6 +14,7 @@ return [
 
     'events' => [
         'upcoming' => 'БЛИЖАЙШИЕ СОБЫТИЯ',
+        'header' => 'Расписание событий',
     ],
 
     'timezone' => [

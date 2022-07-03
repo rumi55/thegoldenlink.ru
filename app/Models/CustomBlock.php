@@ -37,7 +37,7 @@ class CustomBlock extends Model implements HasMedia
     use HasTranslations;
     use InteractsWithMedia;
 
-    const COLLECTION = 'image';
+    public const COLLECTION = 'image';
 
     protected $fillable = [
         'name',

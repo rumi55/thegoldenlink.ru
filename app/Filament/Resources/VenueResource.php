@@ -59,7 +59,7 @@ class VenueResource extends Resource
                             ->label(__('Address'))
                             ->enHelp(),
 
-                        Forms\Components\BelongsToSelect::make('city_id')
+                        Forms\Components\Select::make('city_id')
                             ->label(__('City'))
                             ->required()
                             ->relationship('city', 'name'),

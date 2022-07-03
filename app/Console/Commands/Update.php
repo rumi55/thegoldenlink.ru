@@ -36,6 +36,5 @@ class Update extends Command
      */
     public function handle()
     {
-
     }
 }

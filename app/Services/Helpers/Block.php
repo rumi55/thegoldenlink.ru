@@ -20,9 +20,14 @@ class Block
 
     protected function cacheKey(string $type): string
     {
-        return "blocks.{$type}." . (app()->environment('production')
-                ? 'prod'
-                : (string) time());
+        return "blocks.{$type}." . $this->getCacheString();
+    }
+
+    protected function getCacheString()
+    {
+        return app()->environment('production')
+            ? 'prod'
+            : (string) time();
     }
 
     public static function get(string $type): static
@@ -32,6 +37,7 @@ class Block
 
     public function name(): ?string
     {
+        /** @noinspection PhpStrictTypeCheckingInspection */
         return $this->customBlock->name;
     }
 

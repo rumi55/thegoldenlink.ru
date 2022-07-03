@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     border-top: 4px solid #ed8d0e;
+    margin-bottom: 50px;
 
     @media (--mobile) {
         border: none;

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Services\Helpers\EventHelper;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -56,6 +57,7 @@ use Spatie\Translatable\HasTranslations;
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereVenueId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereViews($value)
  * @mixin \Eloquent
+ * @method static Builder|Event published(bool $is = true)
  */
 class Event extends Model implements HasMedia
 {
@@ -66,6 +68,7 @@ class Event extends Model implements HasMedia
     protected $fillable = [
         'title',
         'subtitle',
+        'date_start',
         'is_hot',
         'is_published',
         'views',
@@ -81,36 +84,49 @@ class Event extends Model implements HasMedia
         'is_hot'       => 'boolean',
         'is_published' => 'boolean',
         'views'        => 'array',
+        'date_start'   => 'immutable_datetime',
     ];
 
-    /**  Accessors & Mutators */
+    /**  Attributes */
+
+    public function monthStart(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->date_start->format('m.Y'),
+        );
+    }
 
     public function dates(): Attribute
     {
         return Attribute::make(
-            get: fn () => EventHelper::getDatesFromClasses($this->classes),
-        );
-    }
-
-    public function dateStart(): Attribute
-    {
-        return Attribute::make(
-            get: fn () => data_get($this, 'dates.0.start_at'),
+            get: fn() => EventHelper::getDatesFromClasses($this->classes),
         );
     }
 
     public function previewImage(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl('preview_image'),
+            get: fn() => $this->getFirstMediaUrl('preview_image'),
         );
     }
 
     public function image(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl('image'),
+            get: fn() => $this->getFirstMediaUrl('image'),
         );
+    }
+
+    /** Scopes */
+
+    public function scopePublished(Builder $query, bool $is = true)
+    {
+        return $query->where('is_published', $is);
+    }
+
+    public function scopeActual(Builder $query)
+    {
+        return $query->where('date_start', '>', now());
     }
 
     /** Relations */

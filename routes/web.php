@@ -38,7 +38,10 @@ Route::group([
     Route::get('/events', [\App\Http\Controllers\EventController::class, 'index'])
         ->name('events');
 
-    Route::get('/events/{id}', [\App\Http\Controllers\EventController::class, 'show'])
+    Route::get('/events/1/{id}', [\App\Http\Controllers\EventController::class, 'show1'])
+        ->name('events.show');
+
+    Route::get('/events/2/{id}', [\App\Http\Controllers\EventController::class, 'show2'])
         ->name('events.show');
 
     /** Teachers */

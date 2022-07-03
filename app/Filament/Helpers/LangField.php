@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace App\Filament\Helpers;
 
+use Filament\Forms\Components\Field;
+
 class LangField
 {
-    public static function from(\Filament\Forms\Components\Field $field): array
+    public static function from(Field $field): array
     {
         $column = $field->getName();
 
@@ -17,5 +19,22 @@ class LangField
             $ru->name("{$column}.ru")->statePath("{$column}.ru")->ruHelp(),
             $en->name("{$column}.en")->statePath("{$column}.en")->enHelp(),
         ];
+    }
+
+    /**
+     * @param array<Field> $fields
+     * @return array
+     */
+    public static function fromArray(array $fields): array
+    {
+        $data = [];
+
+        foreach ($fields as $field) {
+            foreach (static::from($field) as $langField) {
+                $data[] = $langField;
+            }
+        }
+
+        return $data;
     }
 }

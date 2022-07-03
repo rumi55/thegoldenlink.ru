@@ -45,12 +45,9 @@ class UserResource extends Resource
                     ->schema([
                         Forms\Components\Toggle::make('is_subscribed')
                             ->label(__('Is Subscribed'))
-                            ->default(true),
-                    ])
-                    ->columnSpan(2),
+                            ->default(true)
+                            ->columnSpan(2),
 
-                Forms\Components\Card::make()
-                    ->schema([
                         Forms\Components\TextInput::make('name')
                             ->label(__('User Name'))
                             ->required(),
@@ -58,41 +55,12 @@ class UserResource extends Resource
                         Forms\Components\TextInput::make('spiritual_name')
                             ->label(__('Spiritual Name')),
 
-                        Forms\Components\Select::make('sex')
-                            ->label(__('Sex'))
-                            ->options(Sex::options()),
-                    ])
-                    ->columnSpan(1),
-
-                Forms\Components\Card::make()
-                    ->schema([
                         Forms\Components\TextInput::make('email')
-                            ->unique(fn (
-                                $component,
-                                $get,
-                                $livewire,
-                                $model,
-                                $record,
-                                $set,
-                                $state
-                            ) => $record === null)
+                            ->unique(ignorable: fn (?Model $record): ?Model => $record)
                             ->label(__('Email'))
                             ->required()
                             ->email(),
 
-                        Forms\Components\TextInput::make('phone')
-                            ->label(__('Phone'))
-                            ->tel(),
-
-                        Forms\Components\BelongsToManyMultiSelect::make('roles')
-                            ->preload()
-                            ->relationship('roles', 'display_name')
-                            ->label(__('Roles')),
-                    ])
-                    ->columnSpan(1),
-
-                Forms\Components\Card::make()
-                    ->schema([
                         Forms\Components\TextInput::make('password')
                             ->disableAutocomplete()
                             ->required(
@@ -109,17 +77,26 @@ class UserResource extends Resource
                             ->dehydrateStateUsing(fn ($state) => !empty($state) ? Hash::make($state) : '')
                             ->password()
                             ->label(__('Password')),
-                    ])
-                    ->columnSpan(1),
 
-                Forms\Components\SpatieMediaLibraryFileUpload::make('avatar')
-                    ->collection('avatar')
-                    ->label(__('Avatar'))
-                    ->image(),
-            ])
-            ->columns([
-                'sm' => 2,
-                'lg' => 2,
+                        Forms\Components\TextInput::make('phone')
+                            ->label(__('Phone'))
+                            ->tel(),
+
+                        Forms\Components\Select::make('sex')
+                            ->label(__('Sex'))
+                            ->options(Sex::options()),
+
+                        Forms\Components\MultiSelect::make('roles')
+                            ->preload()
+                            ->relationship('roles', 'display_name')
+                            ->label(__('Roles')),
+
+                        Forms\Components\SpatieMediaLibraryFileUpload::make('avatar')
+                            ->collection('avatar')
+                            ->label(__('Avatar'))
+                            ->image(),
+                    ])
+                    ->columns(2),
             ]);
     }
 

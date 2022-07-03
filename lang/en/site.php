@@ -14,6 +14,7 @@ return [
 
     'events' => [
         'upcoming' => 'UPCOMING EVENTS',
+        'header' => 'Event Schedule',
     ],
 
     'timezone' => [
@@ -49,5 +50,5 @@ return [
 
     'publicOffer' => 'Public Offer',
     'privacyPolicy' => 'Privacy Policy',
-    'legal' => 'Individual entrepreneur Korovainaya Nadezhda Nikolaevna <br> TIN 504790890746 OGRNIP 319505300006081'
+    'legal' => 'Individual entrepreneur Korovainaya Nadezhda Nikolaevna <br> TIN 504790890746 OGRNIP 319505300006081',
 ];

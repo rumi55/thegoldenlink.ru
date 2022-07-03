@@ -51,8 +51,8 @@ class Review extends Model implements HasMedia
         'text',
     ];
 
-    const COLLECTION = 'photo';
-    const THUMB = 'thumb';
+    public const COLLECTION = 'photo';
+    public const THUMB = 'thumb';
 
     /** Accessors & Mutators */
 

@@ -21,7 +21,9 @@
                         >
                             <div class="event__datetime">
                                 <div class="event__date">{{ $event->date_start->format('d') }}</div>
-                                <div class="event__month">{{ $event->date_start->translatedFormat('F') }}</div>
+                                <div class="event__month">
+                                    {{ str($event->date_start->translatedFormat('F'))->ucfirst() }}
+                                </div>
                                 <div class="event__time">
                                     {{ $event->date_start->format('H:i') }}
                                     @lang('site.timezone.moscow')

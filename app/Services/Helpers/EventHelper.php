@@ -28,4 +28,9 @@ class EventHelper
             ?->filter()
             ?->sortBy('start_at');
     }
+
+    public static function getDateStartFromClasses(?Collection $classes): ?Carbon
+    {
+        return data_get(static::getDatesFromClasses($classes)->first(), 'start_at');
+    }
 }

@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
+use App\Listeners\EventClassSaved;
+use App\Services\Helpers\EventHelper;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Translatable\HasTranslations;
 
 /**
@@ -48,10 +53,11 @@ use Spatie\Translatable\HasTranslations;
  * @method static \Illuminate\Database\Eloquent\Builder|EventClass whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class EventClass extends Model
+class EventClass extends Model implements HasMedia
 {
     use HasFactory;
     use HasTranslations;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'title',
@@ -73,10 +79,29 @@ class EventClass extends Model
         'dates' => 'array',
     ];
 
-    const AFTER_REGISTER = 'after_register';
-    const AFTER_PAY = 'after_pay';
-    const AFTER_CLASS = 'after_class';
-    const AFTER_EVENT = 'after_event';
+    public const AFTER_REGISTER = 'after_register';
+    public const AFTER_PAY = 'after_pay';
+    public const AFTER_CLASS = 'after_class';
+    public const AFTER_EVENT = 'after_event';
+    public const COLLECTION = 'image';
+
+    protected static function booted()
+    {
+        static::saved(function (EventClass $eventClass) {
+            $eventClass->event->update([
+                'date_start' => EventHelper::getDateStartFromClasses($eventClass->event->classes),
+            ]);
+        });
+    }
+
+    /** Attributes */
+
+    public function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->getFirstMediaUrl(static::COLLECTION),
+        );
+    }
 
     /** Relations */
 

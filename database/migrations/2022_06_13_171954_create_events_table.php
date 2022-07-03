@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->json('title');
             $table->json('subtitle')->nullable();
+            $table->timestamp('date_start')->nullable();
             $table->boolean('is_hot')->nullable();
             $table->boolean('is_published')->nullable();
             $table->json('views')->nullable();
