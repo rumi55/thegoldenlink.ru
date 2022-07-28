@@ -93,7 +93,7 @@ class EventResource extends Resource
     {
         return Forms\Components\Card::make()
             ->schema([
-                Forms\Components\RelationshipRepeater::make('classes')
+                Forms\Components\Repeater::make('classes')
                     ->label(__('Classes'))
                     ->relationship('classes')
                     ->defaultItems(0)
@@ -158,7 +158,8 @@ class EventResource extends Resource
                             ->columnSpan(2)
                             ->createItemButtonLabel(__('Add date')),
 
-                        Forms\Components\RelationshipRepeater::make('prices')
+                        Forms\Components\Repeater::make('prices')
+                            ->relationship('prices')
                             ->label(__('Prices'))
                             ->schema([
                                 Forms\Components\TextInput::make('price')
@@ -398,7 +399,7 @@ class EventResource extends Resource
                                                         ->required(),
                                                 ),
 
-                                                Forms\Components\TextInput::make('start_at')
+                                                Forms\Components\TextInput::make('time_start_at')
                                                     ->mask(
                                                         fn(Forms\Components\TextInput\Mask $mask
                                                         ) => $mask->pattern('00:00')

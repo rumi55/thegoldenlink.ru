@@ -38,8 +38,14 @@ Route::group([
     Route::get('/events', [\App\Http\Controllers\EventController::class, 'index'])
         ->name('events');
 
-    Route::get('/events/1/{id}', [\App\Http\Controllers\EventController::class, 'show1'])
+    Route::get('/events/{id}', [\App\Http\Controllers\EventController::class, 'show'])
         ->name('events.show');
+
+    Route::get('/events/1/{id}', [\App\Http\Controllers\EventController::class, 'show1'])
+        ->name('events.show.1');
+
+    Route::get('/events/2/{id}', [\App\Http\Controllers\EventController::class, 'show2'])
+        ->name('events.show.2');
 
     Route::get('/events/2/{id}', [\App\Http\Controllers\EventController::class, 'show2'])
         ->name('events.show');

@@ -19,9 +19,16 @@ class EventController extends Controller
         ]);
     }
 
+    public function show(int | string $id)
+    {
+        return view('site.controllers.event.show', [
+            'event' => $this->eventService->getEventForShowPage($id),
+        ]);
+    }
+
     public function show1()
     {
-        return view('site.controllers.event.show');
+        return view('site.controllers.event.show1');
     }
 
     public function show2()

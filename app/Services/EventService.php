@@ -33,6 +33,13 @@ class EventService
             ->sortKeys();
     }
 
+    public function getEventForShowPage(string | int $id): Event | Builder
+    {
+        return $this->baseQuery()
+            ->where('id', '=', $id)
+            ->firstOrFail();
+    }
+
     protected function baseQuery(): Builder
     {
         return Event::query()

@@ -8,4 +8,9 @@ use Filament\Resources\Pages\EditRecord;
 class EditEvent extends EditRecord
 {
     protected static string $resource = EventResource::class;
+
+    public function beforeValidate()
+    {
+        dd($this->data);
+    }
 }
